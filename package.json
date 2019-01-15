@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "start": "nodemon index.js"
   },
   "repository": {
@@ -24,7 +25,7 @@
   },
   "homepage": "https://github.com/davidherzlos/js-simple-web#readme",
   "dependencies": {
-    "express": "^4.16.4",
+    "audit": "0.0.6",
     "nodemon": "^1.18.9"
   },
   "devDependencies": {

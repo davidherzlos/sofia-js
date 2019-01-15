@@ -1,17 +1,24 @@
+const PORT = 1337
 
-const http = require('http');
-const fs = require('fs');
+const http = require('http')
+const server = http.createServer((request, response) => {
 
-const server = http.createServer((req, res) => {
-  fs.readFile('./resources/view.html', (err, data) => {
-    if (err) {
-      console.error('There was an error with req: ' + req);
-      return;
-    }
-    res.end(data);
-  });
-});
+  // collect request data, method, url, headers, body if any
+  // console.log(request.url)
+  // console.log(request.method)
+  // console.log(request.headers)
+  // console.log(request.statusCode)
+  
+  // parse url
+  // match to defined route
+  // redirect to action or controller
+  // create response data o view
+  // send response
 
-const port = 1337;
-console.log(`Starting server at port ${port}`);
-server.listen(port);
+  response.statusCode = 200
+  response.end(`Status Code: ${response.statusCode}`)
+
+})
+
+console.log(`Starting server at port ${PORT}`)
+server.listen(PORT)

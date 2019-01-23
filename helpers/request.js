@@ -12,13 +12,12 @@ const fetch = (func, input) => {
         response.resume()
         reject(
           new Error(`Request failed: \n status-code: ${statusCode}, content-type: ${contentType}`)
-          )
+        )
       }
 
       let rawData = ''
       response.on('data', (chunk) => { rawData += chunk })
       response.on('end', () => { resolve(rawData) })
-
     })
   })
 }

@@ -3,7 +3,6 @@
 const fetch = (func, input) => {
   return new Promise((resolve, reject) => {
     func(input, (response) => {
-
       response.setEncoding('utf8')
       const { statusCode, headers } = response
       const contentType = headers['content-type']

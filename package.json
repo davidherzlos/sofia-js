@@ -1,7 +1,7 @@
 {
-  "name": "js-simple-web",
+  "name": "sofia-js",
   "version": "1.0.0",
-  "description": "A simple web framework in nodejs",
+  "description": "A minimalist web framework made with love and nodejs",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -11,20 +11,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidherzlos/js-simple-web.git"
+    "url": "https://github.com/davidherzlos/sofia-js.git"
   },
   "keywords": [
+    "sofia-js",
+    "minimalist",
     "web",
-    "javascript",
     "framework",
-    "mvc"
+    "mvc",
+    "javascript",
+    "nodejs"
   ],
-  "author": "David OC <davidherzlos@gmail.com>(https://twitter.com/davidherzlos)",
+  "author": "David OC <davidherzlos@gmail.com>(https://twitter.com/@davidherzlos)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/davidherzlos/js-simple-web/issues"
+    "url": "https://github.com/davidherzlos/sofia-js/issues"
   },
-  "homepage": "https://github.com/davidherzlos/js-simple-web#readme",
+  "homepage": "https://github.com/davidherzlos/sofia-js#readme",
   "dependencies": {
     "audit": "0.0.6",
     "nodemon": "^1.18.9"

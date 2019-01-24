@@ -1,6 +1,4 @@
-const router = require('./router')
-const routes = require('./routes')
-const routerService = router(routes)
+const { router } = require('./bootstrap/app')
 const http = require('http')
 
 const { PORT } = require('./config')
@@ -21,7 +19,7 @@ const server = http.createServer((request, response) => {
   // send response
 
   try {
-    const actionCallback = routerService({ url, method })
+    const actionCallback = router({ url, method })
     const responseData = actionCallback()
     response.write(responseData)
     response.statusCode = 200

@@ -1,27 +1,24 @@
-const routerComposer = require('../../lib/router-composer')
-const routingToAction = require('../../lib/route-service/routeToAction')
-const routesFile = require('../../routes')
-
+const preRouter = require('../../lib/router')
+const routes = require('../../routes')
 var router
 
 describe('Router service Test suite', () => {
   beforeEach(() => {
-    router = routerComposer(routingToAction, routesFile)
+    router = preRouter(routes)
   })
 
   test('It should load a routes file', () => {
     const cachedRoutes = router.getCachedRoutes()
-    expect(cachedRoutes).toBe(routesFile)
+    expect(cachedRoutes).toBe(routes)
   })
 
-  test('It should route to a user defined route action', () => {
+  test('It should route to a user defined route handler', () => {
     const requestData = {
-      method: 'GET',
-      url: '/metal-bands-that-i-love'
+      path: '/metal-bands-that-i-love'
     }
 
     const cachedRoutes = router.getCachedRoutes()
-    const validCallback = cachedRoutes[0].action
+    const validCallback = cachedRoutes[requestData.path].handler
 
     const actionCallback = router(requestData)
     expect(actionCallback).toBe(validCallback)
@@ -29,8 +26,7 @@ describe('Router service Test suite', () => {
 
   test('It should route a default response if route is not valid', () => {
     const requestData = {
-      method: 'GET',
-      url: '/animals/tiger'
+      path: '/muaaa'
     }
 
     const actionCallback = router(requestData)

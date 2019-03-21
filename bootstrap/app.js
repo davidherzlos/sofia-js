@@ -1,6 +1,9 @@
-const routerComposer = require('../lib/router-composer')
-const routingToAction = require('../lib/route-service/routeToAction')
-const routesFile = require('../routes')
+// Routes
+const routes = require('../routes')
+
+// Router
+const router = require('../lib/router')(routes)
+
 module.exports = {
-  router: routerComposer(routingToAction, routesFile)
+  router: router
 }

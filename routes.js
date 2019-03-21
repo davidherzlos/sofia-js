@@ -1,11 +1,12 @@
-const routes = require('./lib/routes-parser')
+const Route = require('./lib/routes-reader')
+
 /*
-* Routes should be here
+* Routes should be registed here
 */
 
-routes
-  .add('get', '/metal-bands-that-i-love', () => { return '/metal-bands-that-i-love' })
-  .add('get', 'default', () => { return 'Route Not found' })
+Route('get', '/metal-bands-that-i-love', () => '/metal-bands-that-i-love')
+Route('get', '/jazz-band-i-play', () => '/jazz-band-i-play')
+Route('get', '/sample', 'sampleHandler')
 
-/* Routes should end here */
-module.exports = routes.dump()
+// Export routes object
+module.exports = Route.all()

@@ -19,8 +19,9 @@ const server = http.createServer((request, response) => {
   // send response
 
   try {
-    const actionCallback = router({ url, method })
+    const actionCallback = router({ path: url })
     const responseData = actionCallback()
+    console.log(responseData)
     response.write(responseData)
     response.statusCode = 200
     response.write('\n')
